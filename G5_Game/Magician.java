@@ -41,7 +41,7 @@ public class Magician extends Man
             moveLeft.addImge(ImageIO.read(new File(path+"walk2_left.png")));
         }
         catch (Exception ex) {
-            System.out.println("No found Imge!!!!!");
+            System.out.println("No found Magician!!!!!");
         }
         nowImg = standby.nextImge();
     }

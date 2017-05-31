@@ -13,6 +13,7 @@ public class Controller
         this.viewer = viewer;
         model.setController(this);
         viewer.setController(this);
+        viewer.setPanel();
         counter = new Counter(this);
         counter.start();
     }
@@ -24,4 +25,6 @@ public class Controller
     {
         viewer.refreshTime(model.getSecond());
     }
+    public Man getPlayer1(){return model.getPlayer1();}
+    public Man getPlayer2(){return model.getPlayer2();}
 }

@@ -2,10 +2,14 @@ public class Model
 {
     private Controller controller;
     private int second;
+    private Man player1;
+    private Man player2;
     public Model(int second)
     {
         this.second = second;
         this.controller = null;
+        player1 = new Magician();
+        player2 = new Magician();
     }
     public int getSecond()
     {
@@ -20,4 +24,6 @@ public class Model
     {
         this.controller = controller;
     }
+    public Man getPlayer1(){return this.player1;}
+    public Man getPlayer2(){return this.player2;}
 }
