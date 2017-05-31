@@ -1,13 +1,19 @@
+import java.awt.*;
 public class Model
 {
     private Controller controller;
     private int second;
     private Man player1;
     private Man player2;
+    private int backGroundHeight;
+    private int backGroundWidth;
+    private Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
     public Model(int second)
     {
         this.second = second;
         this.controller = null;
+        backGroundHeight = (int)(screenSize.getHeight());
+        backGroundWidth = (int)screenSize.getWidth();
         player1 = new Magician();
         player2 = new Magician();
     }
@@ -26,4 +32,6 @@ public class Model
     }
     public Man getPlayer1(){return this.player1;}
     public Man getPlayer2(){return this.player2;}
+    public int getBackGroundHeight(){return this.backGroundHeight;}
+    public int getBackGroundWidtht(){return this.backGroundWidth;}
 }

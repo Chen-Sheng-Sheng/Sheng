@@ -25,10 +25,10 @@ public class Magician extends Man
         width = 300;
         x = 200;
         y = 300;
-        this.setBackground(null);
+        //this.setBackground(null);
         //this.setOpaque(false);
-        setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(500, 300));
+        //setLayout(new BorderLayout());
+        //setPreferredSize(new Dimension(width, height));
         try{
             standby.addImge(ImageIO.read(new File(path+"standby1.png")));
             moveRight.addImge(ImageIO.read(new File(path+"walk1_right.png")));
@@ -52,7 +52,7 @@ public class Magician extends Man
     }
     public void paintComponent(Graphics g)
     {
-        //super.paintComponent(g);
+        super.paintComponent(g);
         g.drawImage(nowImg,0,0,width,height,null,null); 
     }
     public int getHeight(){return height;}

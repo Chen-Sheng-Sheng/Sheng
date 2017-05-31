@@ -7,6 +7,7 @@ public class Controller
     private Model model;
     private View viewer;
     private Counter counter;
+    private Game game;
     public Controller(Model model,View viewer)
     {
         this.model = model;
@@ -15,7 +16,9 @@ public class Controller
         viewer.setController(this);
         viewer.setPanel();
         counter = new Counter(this);
+        game = new Game(this);
         counter.start();
+        game.start();
     }
     public Model getModel()
     {
@@ -25,6 +28,4 @@ public class Controller
     {
         viewer.refreshTime(model.getSecond());
     }
-    public Man getPlayer1(){return model.getPlayer1();}
-    public Man getPlayer2(){return model.getPlayer2();}
 }

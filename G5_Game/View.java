@@ -15,16 +15,15 @@ public class View extends JPanel implements KeyListener
     private int backGroundHeight;
     private int backGroundWidth;
     private JFrame jframe;
-    private Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
     public View()
     {
-        backGroundHeight = (int)(screenSize.getHeight());
-        backGroundWidth = (int)screenSize.getWidth();
         this.controller = null;
     }
     public void setPanel()
     {
         String path = "img/";
+        this.backGroundHeight = controller.getModel(). getBackGroundHeight();
+        this.backGroundWidth = controller.getModel(). getBackGroundWidtht();
         try {
             this.setLayout(null);
             setPreferredSize(new Dimension(backGroundWidth, backGroundHeight));
@@ -35,10 +34,14 @@ public class View extends JPanel implements KeyListener
             statusPanel = new StatusPanel();
             statusPanel.setBounds(10, 10, (int)(backGroundWidth*0.96), (int)(backGroundHeight*0.9));
             
-            player1 = controller.getPlayer1();
+            player1 = controller.getModel().getPlayer1();
             player1.setBounds(player1.getX(),player1.getY(),player1.getWidth(),player1.getHeight());
         
-            player2 = controller.getPlayer2();
+            player2 = controller.getModel().getPlayer2();
+            player2.setNowImg("moveLeft");
+            player2.setNowImg("moveLeft");
+            display();
+            player2.setX(700);
             player2.setBounds(player2.getX(),player2.getY(),player2.getWidth(),player2.getHeight());
             
             backGroundImage = ImageIO.read(new File(path+"background0.jpg"));//讀取背景圖片
