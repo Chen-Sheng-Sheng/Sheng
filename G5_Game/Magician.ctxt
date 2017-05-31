@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Magician()
+comment1.params=
+comment1.target=void\ display()
+comment10.params=y
+comment10.target=void\ setY(int)
+comment11.params=status
+comment11.target=void\ setNowImg(java.lang.String)
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=
+comment3.target=int\ getHeight()
+comment4.params=
+comment4.target=int\ getWidth()
+comment5.params=
+comment5.target=int\ getX()
+comment6.params=
+comment6.target=int\ getY()
+comment7.params=height
+comment7.target=void\ setHeight(int)
+comment8.params=width
+comment8.target=void\ setWidth(int)
+comment9.params=x
+comment9.target=void\ setX(int)
+numComments=12
