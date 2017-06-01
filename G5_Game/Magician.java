@@ -9,6 +9,7 @@ public class Magician extends Man
     private ImgSequence standby;
     private ImgSequence moveRight;
     private ImgSequence moveLeft;
+    private ImgSequence attackRight;
     private Image nowImg;
     private String path;
     private int height;
@@ -21,6 +22,7 @@ public class Magician extends Man
         standby = new ImgSequence();
         moveRight = new ImgSequence();
         moveLeft = new ImgSequence();
+        attackRight = new ImgSequence();
         height = 300;
         width = 300;
         x = 200;
@@ -39,6 +41,8 @@ public class Magician extends Man
             moveLeft.addImge(ImageIO.read(new File(path+"walk1_left.png")));
             moveLeft.addImge(ImageIO.read(new File(path+"walk2_left.png")));
             moveLeft.addImge(ImageIO.read(new File(path+"walk2_left.png")));
+            attackRight.addImge(ImageIO.read(new File(path+"attack1.png")));
+            attackRight.addImge(ImageIO.read(new File(path+"attack2.png")));
         }
         catch (Exception ex) {
             System.out.println("No found Magician!!!!!");
@@ -75,6 +79,11 @@ public class Magician extends Man
             case "moveLeft":
                 x-=10;
                 nowImg = moveLeft.nextImge();
+                display();
+                break;
+            case "attackRight":
+                x+=5;
+                nowImg = attackRight.nextImge();
                 display();
                 break;
         }

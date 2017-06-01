@@ -103,6 +103,10 @@ public class View extends JPanel implements KeyListener
                 player1.setNowImg("moveLeft");
                 display();
                 break;
+            case KeyEvent.VK_J:
+                player1.setNowImg("attackRight");
+                display();
+                break;
             case KeyEvent.VK_RIGHT:
                 player2.setNowImg("moveRight");
                 display();
