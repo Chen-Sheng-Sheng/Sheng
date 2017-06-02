@@ -16,9 +16,7 @@ public class Controller
         viewer.setController(this);
         viewer.setPanel();
         counter = new Counter(this);
-        game = new Game(this);
         counter.start();
-        game.start();
     }
     public Model getModel()
     {

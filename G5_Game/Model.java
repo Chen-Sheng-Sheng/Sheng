@@ -14,8 +14,8 @@ public class Model
         this.controller = null;
         backGroundHeight = (int)(screenSize.getHeight());
         backGroundWidth = (int)screenSize.getWidth();
-        player1 = new Magician();
-        player2 = new Magician();
+        player1 = new Magician(this);
+        player2 = new Magician(this);
     }
     public int getSecond()
     {

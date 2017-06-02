@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.imageio.*;
 import java.io.*;
 import java.lang.Thread;
-public class Magician extends Man
+public class Magician extends Man implements Runnable
 {
     private ImgSequence standby;
     private ImgSequence moveRight;
@@ -16,7 +16,9 @@ public class Magician extends Man
     private int width;
     private int x;
     private int y;
-    public Magician()
+    private Thread me;
+    private Model model;
+    public Magician(Model model)
     {
         path = "img/MagicianPeople/";
         standby = new ImgSequence();
@@ -27,10 +29,11 @@ public class Magician extends Man
         width = 300;
         x = 200;
         y = 300;
-        //this.setBackground(null);
-        //this.setOpaque(false);
-        //setLayout(new BorderLayout());
-        //setPreferredSize(new Dimension(width, height));
+        this.model = model;
+        this.setBackground(null);
+        this.setOpaque(false);
+        setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(width, height));
         try{
             standby.addImge(ImageIO.read(new File(path+"standby1.png")));
             moveRight.addImge(ImageIO.read(new File(path+"walk1_right.png")));
@@ -48,6 +51,16 @@ public class Magician extends Man
             System.out.println("No found Magician!!!!!");
         }
         nowImg = standby.nextImge();
+        me = new Thread(this);
+        me.start();
+    }
+    public void run()
+    {
+        while(Thread.currentThread() == me)
+        {
+            if(this.x < 0){this.x = 0;}
+            if(this.x > (int)(model.getBackGroundWidtht()*0.8)){this.x = (int)(model.getBackGroundWidtht()*0.8);}
+        }
     }
     public void display()
     {
